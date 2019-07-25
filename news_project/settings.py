@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'news_app_index.apps.NewsAppIndexConfig',
     'news_app_tech.apps.NewsAppTechConfig',
     'news_app_music.apps.NewsAppMusicConfig',
+    'news_app_esports.apps.NewsAppEsportsConfig',
 
 
 

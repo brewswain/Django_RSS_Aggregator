@@ -5,15 +5,17 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from .serializers import FeedSerializer
 from .models import Feed
-from django.http import HttpResponse
 
 import feedparser
 
 # Create your views here.
 
 
+from django.http import HttpResponse
+
+
 def index(request):
-    return render(request, 'news_app_music/reader.html')
+    return render(request, 'news_app_esports/reader.html')
 
 
 @csrf_exempt
@@ -30,6 +32,8 @@ def rest_feeds(request):
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=201)
+
+        return JsonResponse(serializer.errors, status=400)
 
 
 @csrf_exempt

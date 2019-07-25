@@ -21,4 +21,5 @@ urlpatterns = [
     path('rss/', include('news_app_index.urls')),
     path('tech/', include('news_app_tech.urls')),
     path('music/', include('news_app_music.urls')),
+    path('esports/', include('news_app_esports.urls')),
 ]

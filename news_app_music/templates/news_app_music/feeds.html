@@ -1,3 +1,4 @@
+<main>
 <div class="wrapper">
   {% verbatim %}
   <section>
@@ -5,7 +6,7 @@
     <div class="article">
       <p>
         <div class="header"><span class="author"> {{ item.author }} </span>
-          <span class="publish-date"> {{ item.published }} </span></div>
+          <span class="publish-date"> {{ item.published}} </span></div>
 
         
           <div class="content"><a v-bind:href="item.link" target="_blank" class="title">{{ item.title }}</a>
@@ -16,3 +17,4 @@
 </section>
   {% endverbatim %} 
 </div>
+</main>
