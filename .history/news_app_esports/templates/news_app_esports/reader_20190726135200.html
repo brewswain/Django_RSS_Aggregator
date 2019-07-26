@@ -1,5 +1,4 @@
-{% extends 'news_app_tech/base.html' %} {% block body %}
-
+{% extends 'news_app_esports/base.html' %} {% block body %}
 <section class="loader-container">
   <div id="loader">
     <div id="box"></div>
@@ -9,7 +8,6 @@
     <h1 class="loading-text">Eat your heart out, Sisyphus</h1>
   </div>
 </section>
-
 <div id="rss-app" class="container mt-4">
   <!-- <ul class="nav mb-4">
     <li class="nav-item">
@@ -39,14 +37,14 @@
   <nav>
     <ul class="navbar">
       <li class="nav-items">
-        <a href="http://bleerssaggregator.herokuapp.com/" class="nav-link"
+        <a
+          href="http://bleerssaggregator.herokuapp.com/"
+          class="nav-link active"
           >News</a
         >
       </li>
       <li class="nav-items">
-        <a
-          href="http://bleerssaggregator.herokuapp.com/tech/"
-          class="nav-link active"
+        <a href="http://bleerssaggregator.herokuapp.com/tech/" class="nav-link"
           >Tech</a
         >
       </li>
@@ -58,7 +56,7 @@
       <li class="nav-items">
         <a
           href="http://bleerssaggregator.herokuapp.com/esports/"
-          class="nav-link"
+          class="nav-link active"
           >esports</a
         >
       </li>
@@ -69,19 +67,22 @@
   </nav>
 
   <div v-if="route == 'controls'">
-    {% include 'news_app_tech/control.html' %}
+    {% include 'news_app_esports/control.html' %}
   </div>
   <div v-if="route == 'feeds'">
-    {% include 'news_app_tech/feeds.html' %}
+    {% include 'news_app_esports/feeds.html' %}
   </div>
 </div>
 
 {% load static %}
 <script
   type="application/javascript"
-  src="{% static 'news_app_tech/app.js' %}"
+  src="{% static 'news_app_esports/app.js' %}"
 ></script>
-
+<script
+  type="application/javascript"
+  src="{% static 'news_app_index/navbar.js' %}"
+></script>
 <script type="application/javascript">
   window.addEventListener("load", function() {
     rssApp.setup();
