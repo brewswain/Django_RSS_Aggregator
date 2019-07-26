@@ -1,0 +1,20 @@
+{% extends 'news_app_index/base.html' %} {% block body %}
+<div id="rss-app">
+  <div>
+    <input type="text" v-model="newLink" placeholder="RSS feed URL" />
+    <button @click="newFeed">Save</button>
+  </div>
+
+  {% include 'news_app_index/feeds.html' %}
+</div>
+
+{% load static %}
+<script
+<script type="application/javascript">
+    window.addEventListener("load", function() {
+        rssApp.setup();
+    });
+    </script>
+    
+</script>
+{% endblock %}

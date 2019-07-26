@@ -1,0 +1,13 @@
+<div class="container">
+  {% verbatim %}
+  <div v-if="items.length" v-for="item in items">
+    <div class="article">
+      <p>
+        <span class="author"> {{ item.author }} </span>
+        <span class="publish-date"> {{ item.published }} </span>
+        <a v-bind:href="item.link">{{ item.title }}</a>
+      </p>
+    </div>
+  </div>
+  {% endverbatim %}
+</div>

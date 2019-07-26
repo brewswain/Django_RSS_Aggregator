@@ -1,0 +1,61 @@
+{% extends 'news_app_index/base.html' %} {% block body %}
+
+
+<div id="rss-app" class="container mt-4">
+  <!-- <ul class="nav mb-4">
+    <li class="nav-item">
+      <a class="nav-link" href="#feeds" @click="setRoute('feeds')">Feeds</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#controls" @click="setRoute('controls')"
+        >Controls</a
+      > 
+    </li>
+  </ul>
+
+  <div class="row mb-4">
+    <div class="col-4">
+      <input
+        type="text"
+        v-model="newLink"
+        placeholder="RSS feed URL"
+        class="form-control"
+      />
+    </div>
+    <div class="col-2">
+      <button class="btn btn-secondary" @click="newFeed">Save</button>
+    </div>
+  </div> -->
+
+
+
+  <nav>
+    <ul class="navbar">
+      <li class="nav-items"><a href="http://localhost:8000/rss/" class="nav-link active">News</a></li>
+      <li class="nav-items"><a href="http://localhost:8000/tech/" class="nav-link">Tech</a></li>
+      <li class="nav-items"><a href="http://localhost:8000/music/" class="nav-link">Music</a></li>
+      <li class="nav-items"><a href="http://localhost:8000/esports/" class="nav-link">esports</a></li>
+    </ul>
+  </nav>
+
+    <div v-if="route == 'controls'">
+      {% include 'news_app_index/control.html' %}
+    </div>
+    <div v-if="route == 'feeds'">
+      {% include 'news_app_index/feeds.html' %}
+    </div> 
+  </div>
+
+  {% load static %}
+  <script
+    type="application/javascript"
+    src="{% static 'news_app_index/app.js' %}"
+  ></script>
+  <script type="application/javascript">
+    window.addEventListener("load", function() {
+      rssApp.setup();
+    });
+  </script>
+
+  {% endblock %}
+</div>

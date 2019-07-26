@@ -1,0 +1,19 @@
+
+
+<div class="wrapper">
+  {% verbatim %}
+  <section class="feed">
+  <div v-if="items.length" v-for="item in items">
+    <div class="article">
+      <p>
+        <div class="header"><span class="author"> {{ item.author }} </span>
+          <span class="publish-date"> {{ item.published }} </span></div>
+        
+          <div class="content"><a v-bind:href="item.link" target="_blank" class="title">{{ item.title }}</a>
+          </div>
+      </p>
+    </div>
+  </div>
+</section>
+  {% endverbatim %}
+</div>
