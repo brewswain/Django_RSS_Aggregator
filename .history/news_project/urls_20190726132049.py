@@ -20,7 +20,7 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', return redirect(news_app_index.views.redirect_view),
+    path('', redirec('news_app_index.urls')),
     path('rss/', include('news_app_index.urls')),
     path('tech/', include('news_app_tech.urls')),
     path('music/', include('news_app_music.urls')),

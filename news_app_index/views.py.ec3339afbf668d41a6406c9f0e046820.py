@@ -11,11 +11,9 @@ import feedparser
 
 # Create your views here.
 
-
 def redirect_view(request):
     response = redirect('/rss/')
     return response
-
 
 def index(request):
     return render(request, 'news_app_index/reader.html')
