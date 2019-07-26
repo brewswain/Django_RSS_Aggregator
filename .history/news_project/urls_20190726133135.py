@@ -21,7 +21,6 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('news_app_index.urls')),
-    path('', RedirectView.as_view(url='/rss/', permanent=False), name='index')
     path('rss/', include('news_app_index.urls')),
     path('tech/', include('news_app_tech.urls')),
     path('music/', include('news_app_music.urls')),

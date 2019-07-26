@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic.base import RedirectView
+from django.shortcuts import redirect
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('news_app_index.urls')),
-    path('', RedirectView.as_view(url='/rss/', permanent=False), name='index')
     path('rss/', include('news_app_index.urls')),
     path('tech/', include('news_app_tech.urls')),
     path('music/', include('news_app_music.urls')),
